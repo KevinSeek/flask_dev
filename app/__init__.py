@@ -11,7 +11,6 @@ mail = Mail()
 moment = Moment()
 db = SQLAlchemy()
 
-
 # Instantiate Login Manager
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'                                         # Set the endpoint for the login page

@@ -16,7 +16,7 @@ class Role(db.Model):
         # return '<Role %r>' % self.name                                        # Python 2 syntax
         return repr('Role ' + self.name)
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(64), unique=True, index=True)

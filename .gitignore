@@ -160,6 +160,6 @@ Thumbs.db
 
 # VS Code Settings
 .vscode
-
+.archive
 
 # End of https://www.toptal.com/developers/gitignore/api/flask
