@@ -23,3 +23,13 @@ after `main` is defined.
 """
 
 from .import views, errors
+from ..models import Permission
+
+@main.app_context_processor
+def inject_permissions():
+    """
+    Permission may also need to be checked from templates, so the Permission
+    class with all its contstants needs to be accessible to them. Context 
+    processors make variables available to all templates during rendering.
+    """
+    return dict(Permission=Permission)
