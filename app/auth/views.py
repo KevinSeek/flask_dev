@@ -76,6 +76,8 @@ def before_request():
     3.1 Request URL is outside of the authentication blueprint
         - Don't intercept if they are accessing authentication routes on auth blueprints
     """
+    if current_user.is_authenticated:
+        current_user.ping()
     if current_user.is_authenticated and not current_user.confirmed \
         and request.blueprint != 'auth' and request.endpoint != 'static':
             return redirect(url_for('auth.unconfirmed'))
